@@ -1,6 +1,6 @@
 #!/bin/bash
 pm2 stop xmaslights
-pm2 delete xmaslight
+pm2 delete xmaslights
 pm2 save
 rm -rf ~/apps/xmaslights
 mkdir ~/apps/xmaslights
