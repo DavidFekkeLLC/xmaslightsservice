@@ -12,6 +12,7 @@ async function setLightStatus(bulb, state) {
         method: "PUT",
         body: JSON.stringify(state)
     };
+    await fetch(endpoint, options);
 }
 
 async function setLightStatus2() {
