@@ -6,5 +6,5 @@ rm -rf ~/apps/xmaslights
 mkdir ~/apps/xmaslights
 cp -r ~/actions-runner/projects/xmaslightsservice/xmaslightsservice/* ~/apps/xmaslights
 cd ~/apps/xmaslights
-pm2 start xmasservice.js --name xmaslights
+pm2 start ecosystem.config.cjs
 pm2 save

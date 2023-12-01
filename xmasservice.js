@@ -1,5 +1,8 @@
+import process from 'node:process';
+
 const ip_address = process.env.IP_ADDRESS;
 const user = process.env.USERTOKEN;
+
 
 let toggle = true;
 
@@ -9,7 +12,6 @@ async function setLightStatus(bulb, state) {
         method: "PUT",
         body: JSON.stringify(state)
     };
-    await fetch(endpoint, options);
 }
 
 async function setLightStatus2() {
@@ -39,3 +41,8 @@ async function masterSwitch() {
 }
 
 let timer = setInterval(await masterSwitch, 15000);
+
+process.on('exit', (code) => {
+    clearTimeout(timer);
+    console.log(`Program exited with code: ${code}`);
+});
